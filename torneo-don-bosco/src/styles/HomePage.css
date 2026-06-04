@@ -1,0 +1,33 @@
+/* HomePage.css */
+.section-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.cards-section {
+  padding: 100px 0;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-section {
+  padding: 100px 0;
+}
+
+.contact-wrap {
+  padding: 60px 0 100px;
+}
+.contact-wrap .contact-section {
+  padding: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .cards-section,
+  .gallery-section,
+  .contact-wrap { padding: 70px 0; }
+}

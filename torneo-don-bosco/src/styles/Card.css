@@ -1,0 +1,112 @@
+/* =============================================
+   Card.css
+============================================= */
+
+.info-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+.info-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.08),
+    transparent
+  );
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+}
+.info-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+.info-card:hover::before {
+  opacity: 1;
+}
+
+/* Imagen */
+.card-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.info-card:hover .card-img-wrap img {
+  transform: scale(1.08);
+}
+.card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--navy-mid) 0%,
+    transparent 60%
+  );
+}
+
+/* Ícono flotante */
+.card-icon {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--navy);
+}
+
+/* Cuerpo */
+.card-body {
+  padding: 1.5rem;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.6rem;
+}
+.card-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* CTA link */
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.card-link i {
+  transition: transform 0.3s ease;
+}
+.card-link:hover i {
+  transform: translateX(4px);
+}

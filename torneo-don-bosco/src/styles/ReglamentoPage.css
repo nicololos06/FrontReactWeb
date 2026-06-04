@@ -1,0 +1,65 @@
+/* ReglamentoPage.css */
+.reg-main { max-width: 860px; margin: auto; padding: 3.5rem 2rem 6rem; }
+
+.info-pills { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2.5rem; }
+.info-pill {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 50px; font-size: 0.83rem; font-weight: 500;
+}
+.info-pill i { color: var(--gold); }
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.8rem; margin-bottom: 2.5rem;
+}
+.cat-btn {
+  padding: 0.9rem 1rem;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 12px; color: rgba(255,255,255,0.5);
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  text-align: center;
+}
+.cat-icon { font-size: 1.3rem; }
+.cat-btn:hover { border-color: rgba(245,158,11,0.3); color: rgba(255,255,255,0.8); }
+.cat-btn.active {
+  background: rgba(245,158,11,0.12);
+  border-color: var(--gold); color: var(--gold);
+}
+
+.reglas-list { animation: fadePanel 0.35s ease; }
+@keyframes fadePanel {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reglas-titulo {
+  font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 3px;
+  color: var(--gold); margin-bottom: 1.5rem;
+}
+
+.regla-item {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  padding: 1.1rem 1.3rem;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 13px; margin-bottom: 0.7rem;
+  transition: var(--transition); position: relative; overflow: hidden;
+}
+.regla-item::before {
+  content: ''; position: absolute;
+  left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--gold);
+  transform: scaleY(0); transform-origin: top; transition: transform 0.3s ease;
+}
+.regla-item:hover { border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.04); }
+.regla-item:hover::before { transform: scaleY(1); }
+
+.regla-num {
+  font-family: var(--font-display); font-size: 1.5rem;
+  color: rgba(245,158,11,0.35); line-height: 1;
+  flex-shrink: 0; min-width: 28px;
+}
+.regla-text { font-size: 0.93rem; color: rgba(255,255,255,0.78); line-height: 1.65; }
